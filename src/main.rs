@@ -123,11 +123,11 @@ impl State {
             self.frame_time = 0.0;
             self.player.gravity_and_move();
         }
-        if let Some(VirtualKeyCode::Space) = ctx.key {
+        if let Some(VirtualKeyCode::Up) = ctx.key {
             self.player.flap();
         }
         self.player.render(ctx);
-        ctx.print(0, 0, "Press SPACE to flap.");
+        ctx.print(0, 0, "Press Up Arrow key to flap.");
         ctx.print(0, 1, &format!("Score: {}", self.score));
         self.obstacle.render(ctx, self.player.x);
         if self.player.x > self.obstacle.x {
